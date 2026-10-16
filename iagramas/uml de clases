@@ -1,0 +1,53 @@
+classDiagram
+  class Usuario {
+    +UUID id
+    +String nombre
+    +String correo
+    +String hashContrasena
+    +Rol rol
+    +iniciarSesion()
+  }
+  class ReporteRescate {
+    +UUID id
+    +DateTime fecha
+    +String ubicacion
+    +String descripcion
+    +EstadoCaso estado
+    +registrar()
+    +actualizarEstado()
+  }
+  class Animal {
+    +UUID id
+    +String especie
+    +String nombre
+    +int edadEstimada
+    +String condicion
+    +EstadoAnimal estado
+    +actualizarDisponibilidad()
+  }
+  class RegistroVeterinario {
+    +UUID id
+    +DateTime fecha
+    +String diagnostico
+    +String tratamiento
+  }
+  class SolicitudAdopcion {
+    +UUID id
+    +DateTime fecha
+    +String observaciones
+    +EstadoSolicitud estado
+    +aprobar()
+    +rechazar()
+  }
+  class Adopcion {
+    +UUID id
+    +DateTime fechaEntrega
+    +String compromiso
+  }
+  Usuario "1" --> "0..*" ReporteRescate : registra
+  ReporteRescate "0..*" --> "0..1" Animal : origina
+  Animal "1" --> "0..*" RegistroVeterinario : tiene
+  Usuario "1" --> "0..*" SolicitudAdopcion : presenta
+  Animal "1" --> "0..*" SolicitudAdopcion : recibe
+  SolicitudAdopcion "1" --> "0..1" Adopcion : genera
+  Usuario "1" --> "0..*" RegistroVeterinario : registra
