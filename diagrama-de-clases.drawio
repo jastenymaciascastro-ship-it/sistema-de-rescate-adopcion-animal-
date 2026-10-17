@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-10-17T14:00:00.000Z" agent="ChatGPT" version="25.0.3" type="device">
+  <diagram id="diagrama-de-clases" name="Diagrama de clases">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="750" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="Usuario" value="Usuario&#10;- id: UUID&#10;- nombre: String&#10;- correo: String&#10;- hashContrasena: String&#10;- rol: Rol&#10;+ iniciarSesion()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;rounded=0;html=1;collapsible=0;resizeParent=1;resizeLast=0;whiteSpace=wrap;fillColor=#dae8fc;swimlaneFillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="65" width="220" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="Reporte" value="ReporteRescate&#10;- id: UUID&#10;- fecha: DateTime&#10;- ubicacion: String&#10;- descripcion: String&#10;- estado: EstadoCaso&#10;+ registrar()&#10;+ actualizarEstado()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;rounded=0;html=1;collapsible=0;resizeParent=1;resizeLast=0;whiteSpace=wrap;fillColor=#dae8fc;swimlaneFillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="330" y="65" width="235" height="175" as="geometry"/>
+        </mxCell>
+        <mxCell id="Animal" value="Animal&#10;- id: UUID&#10;- especie: String&#10;- nombre: String&#10;- edadEstimada: int&#10;- condicion: String&#10;- estado: EstadoAnimal&#10;+ actualizarDisponibilidad()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;rounded=0;html=1;collapsible=0;resizeParent=1;resizeLast=0;whiteSpace=wrap;fillColor=#dae8fc;swimlaneFillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="65" width="250" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="Vet" value="RegistroVeterinario&#10;- id: UUID&#10;- fecha: DateTime&#10;- diagnostico: String&#10;- tratamiento: String" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;rounded=0;html=1;collapsible=0;resizeParent=1;resizeLast=0;whiteSpace=wrap;fillColor=#dae8fc;swimlaneFillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="960" y="65" width="230" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="Solicitud" value="SolicitudAdopcion&#10;- id: UUID&#10;- fecha: DateTime&#10;- observaciones: String&#10;- estado: EstadoSolicitud&#10;+ aprobar()&#10;+ rechazar()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;rounded=0;html=1;collapsible=0;resizeParent=1;resizeLast=0;whiteSpace=wrap;fillColor=#dae8fc;swimlaneFillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="330" y="360" width="250" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="Adopcion" value="Adopcion&#10;- id: UUID&#10;- fechaEntrega: DateTime&#10;- compromiso: String" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;rounded=0;html=1;collapsible=0;resizeParent=1;resizeLast=0;whiteSpace=wrap;fillColor=#dae8fc;swimlaneFillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="700" y="390" width="230" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="Rol" value="&lt;&lt;enumeration&gt;&gt; Rol&#10;ADMINISTRADOR&#10;OPERADOR&#10;RESCATISTA&#10;VETERINARIO&#10;ENCARGADO_ADOPCION&#10;SOLICITANTE" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;rounded=0;html=1;collapsible=0;resizeParent=1;resizeLast=0;whiteSpace=wrap;fillColor=#dae8fc;swimlaneFillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="390" width="220" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="EstadoCaso" value="&lt;&lt;enumeration&gt;&gt; EstadoCaso&#10;REPORTADO&#10;ASIGNADO&#10;EN_RESCATE&#10;RESUELTO&#10;CANCELADO" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;rounded=0;html=1;collapsible=0;resizeParent=1;resizeLast=0;whiteSpace=wrap;fillColor=#dae8fc;swimlaneFillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="960" y="300" width="230" height="135" as="geometry"/>
+        </mxCell>
+        <mxCell id="EstadoAnimal" value="&lt;&lt;enumeration&gt;&gt; EstadoAnimal&#10;RESCATADO&#10;EN_TRATAMIENTO&#10;DISPONIBLE&#10;ADOPTADO" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;rounded=0;html=1;collapsible=0;resizeParent=1;resizeLast=0;whiteSpace=wrap;fillColor=#dae8fc;swimlaneFillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="960" y="500" width="230" height="125" as="geometry"/>
+        </mxCell>
+        <mxCell id="r1" value="registra" style="endArrow=block;endFill=1;html=1;rounded=0;strokeWidth=1.5;" edge="1" parent="1" source="Usuario" target="Reporte">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r2" value="origina" style="endArrow=block;endFill=1;html=1;rounded=0;strokeWidth=1.5;" edge="1" parent="1" source="Reporte" target="Animal">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r3" value="tiene" style="endArrow=block;endFill=1;html=1;rounded=0;strokeWidth=1.5;" edge="1" parent="1" source="Animal" target="Vet">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r4" value="presenta" style="endArrow=block;endFill=1;html=1;rounded=0;strokeWidth=1.5;" edge="1" parent="1" source="Usuario" target="Solicitud">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r5" value="recibe" style="endArrow=block;endFill=1;html=1;rounded=0;strokeWidth=1.5;" edge="1" parent="1" source="Animal" target="Solicitud">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r6" value="genera" style="endArrow=block;endFill=1;html=1;rounded=0;strokeWidth=1.5;" edge="1" parent="1" source="Solicitud" target="Adopcion">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r7" value="registra" style="endArrow=block;endFill=1;html=1;rounded=0;strokeWidth=1.5;" edge="1" parent="1" source="Usuario" target="Vet">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r8" value="tiene" style="endArrow=none;dashed=1;html=1;rounded=0;strokeWidth=1.2;" edge="1" parent="1" source="Usuario" target="Rol">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r9" value="usa" style="endArrow=none;dashed=1;html=1;rounded=0;strokeWidth=1.2;" edge="1" parent="1" source="Reporte" target="EstadoCaso">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r10" value="usa" style="endArrow=none;dashed=1;html=1;rounded=0;strokeWidth=1.2;" edge="1" parent="1" source="Animal" target="EstadoAnimal">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
